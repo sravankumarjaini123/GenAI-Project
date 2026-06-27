@@ -1,0 +1,8 @@
+python-dotenv
+openai
+uvicorn
+anthropic
+fastapi
+streamlit
+requests
+duckduckgo-search
