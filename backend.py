@@ -9,6 +9,9 @@ app = FastAPI()
 
 load_dotenv()
 
+print("KEY PRESENT:", os.getenv("ANTHROPIC_API_KEY") is not None)
+print("KEY LENGTH:", len(os.getenv("ANTHROPIC_API_KEY") or ""))
+
 client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 
