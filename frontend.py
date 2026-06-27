@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+import os
 
 st.set_page_config(
     page_title="Generative AI Chatbot",
@@ -328,7 +329,8 @@ with st.sidebar:
     st.markdown("---")
     st.markdown('<div class="history-label">Settings</div>', unsafe_allow_html=True)
     st.markdown('<div class="sidebar-input">', unsafe_allow_html=True)
-    api_url = st.text_input("Backend URL", value="http://localhost:8000", label_visibility="visible")
+    default_url = os.getenv("BACKEND_URL", "http://localhost:8000")
+    api_url = st.text_input("Backend URL", value=default_url, label_visibility="visible")
     st.markdown('</div>', unsafe_allow_html=True)
     st.markdown(
         '<p style="font-size:11px;color:#334155;margin-top:4px;">uvicorn backend:app --port 8000</p>',
